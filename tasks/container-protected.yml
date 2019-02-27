@@ -2,7 +2,7 @@
 
 - name: Check for emtpy pmm_server_username and pmm_server_password
   fail: msg="Username or pmm_server_password cannot be empty while enabling pmm_server_password protection"
-  when: ( "{{ pmm_server_username }}" == '' )  or ( "{{ pmm_server_password }}" == '' )
+  when: ( pmm_server_username == '' )  or ( pmm_server_password == '' )
 
 
 - name: Running PMM Data Container secured with pmm_server_username and pmm_server_password
@@ -10,6 +10,8 @@
     name: pmm-server
     image: "percona/pmm-server:{{ pmm_server_version }}"
     state: started
+    volumes:
+    - /etc/grafana:/etc/grafana
     volumes_from:
     - pmm-data
     env: "{{ __pmm_server_env }}"

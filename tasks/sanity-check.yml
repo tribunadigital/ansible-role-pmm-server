@@ -1,17 +1,24 @@
 ---
 - name: Sanity check for pmm_server_ENABLE_PROTECTION
   fail: msg="Value of pmm_server_ENABLE_PROTECTION can only be either true or false"
-  when: "(pmm_server_ENABLE_PROTECTION != false) and  (pmm_server_ENABLE_PROTECTION != true)"
-
+  when: 
+    - pmm_server_ENABLE_PROTECTION
+    - not pmm_server_ENABLE_PROTECTION
 
 - name: Sanity check for pmm_server_ENABLE_SSL
   fail: msg="Value of pmm_server_ENABLE_SSL can only be either true or false"
-  when: "(pmm_server_ENABLE_SSL != false) and (pmm_server_ENABLE_SSL != true)"
+  when:
+    - pmm_server_ENABLE_SSL
+    - not pmm_server_ENABLE_SSL
 
 - name: Sanity check for pmm_server_default_cert
   fail: msg="Value of pmm_server_default_cert can only be either true or false"
-  when: "(pmm_server_default_cert != true) and (pmm_server_default_cert != false)"
+  when:
+    - pmm_server_default_cert
+    - not pmm_server_default_cert
 
 - name: Sanity cheeck for pmm_server_UNINSTALL_PMM
   fail: msg="Value of pmm_server_UNINSTALL_PMM can only be either true or false"
-  when: "(pmm_server_UNINSTALL_PMM != true) and (pmm_server_UNINSTALL_PMM != false)"
+  when:
+    - pmm_server_UNINSTALL_PMM
+    - not pmm_server_UNINSTALL_PMM

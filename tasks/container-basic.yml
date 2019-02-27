@@ -5,6 +5,8 @@
     insecure_registry: true
     image: "percona/pmm-server:{{ pmm_server_version }}"
     state: started
+    volumes:
+    - /etc/grafana:/etc/grafana
     volumes_from:
     - pmm-data
     env: "{{ __pmm_server_env }}"
