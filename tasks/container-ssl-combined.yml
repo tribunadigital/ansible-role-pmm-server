@@ -19,6 +19,11 @@
     name: pmm-server
     image: "percona/pmm-server:{{ pmm_server_version }}"
     state: started
+    cpuset_cpus: "{{ pmm_server_docker_cpuset_cpus }}"
+    memory: "{{ pmm_server_docker_memory }}"
+    memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
+    purge_networks: "{{ pmm_server_docker_purge_networks }}"
+    networks: "{{ pmm_server_docker_networks }}"
     volumes:
     - /etc/pmm-certs:/srv/nginx
     - /etc/grafana:/etc/grafana
@@ -44,6 +49,11 @@
     name: pmm-server
     image: "percona/pmm-server:{{ pmm_server_version }}"
     state: started
+    cpuset_cpus: "{{ pmm_server_docker_cpuset_cpus }}"
+    memory: "{{ pmm_server_docker_memory }}"
+    memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
+    purge_networks: "{{ pmm_server_docker_purge_networks }}"
+    networks: "{{ pmm_server_docker_networks }}"
     volumes:
     - /etc/pmm-certs:/srv/nginx
     - /etc/grafana:/etc/grafana
