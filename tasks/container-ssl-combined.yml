@@ -24,6 +24,7 @@
     memory: "{{ pmm_server_docker_memory }}"
     memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
     memory_swap: "{{ pmm_server_docker_memory_swap }}"
+    network_mode: "{{ pmm_server_docker_network_mode }}"
     purge_networks: "{{ pmm_server_docker_purge_networks }}"
     networks: "{{ pmm_server_docker_networks }}"
     volumes:
@@ -56,6 +57,7 @@
     memory: "{{ pmm_server_docker_memory }}"
     memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
     memory_swap: "{{ pmm_server_docker_memory_swap }}"
+    network_mode: "{{ pmm_server_docker_network_mode }}"
     purge_networks: "{{ pmm_server_docker_purge_networks }}"
     networks: "{{ pmm_server_docker_networks }}"
     volumes:

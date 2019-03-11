@@ -37,6 +37,7 @@ pmm_server_docker_cpu_quota: 1000
 pmm_server_docker_memory: 2048M
 pmm_server_docker_memory_reservation: 1024M
 pmm_server_docker_memory_swap: 2048M
+pmm_server_docker_network_mode: bridge
 pmm_server_docker_purge_networks: yes
 pmm_server_docker_networks: []
 
