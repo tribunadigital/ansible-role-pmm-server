@@ -23,6 +23,7 @@
     cpu_quota: "{{ pmm_server_docker_cpu_quota }}"
     memory: "{{ pmm_server_docker_memory }}"
     memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
+    memory_swap: "{{ pmm_server_docker_memory_swap }}"
     purge_networks: "{{ pmm_server_docker_purge_networks }}"
     networks: "{{ pmm_server_docker_networks }}"
     volumes:
@@ -54,6 +55,7 @@
     cpu_quota: "{{ pmm_server_docker_cpu_quota }}"
     memory: "{{ pmm_server_docker_memory }}"
     memory_reservation: "{{ pmm_server_docker_memory_reservation }}"
+    memory_swap: "{{ pmm_server_docker_memory_swap }}"
     purge_networks: "{{ pmm_server_docker_purge_networks }}"
     networks: "{{ pmm_server_docker_networks }}"
     volumes:
