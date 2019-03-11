@@ -32,7 +32,8 @@ pmm_server_env_custom: {}
 # Set this to true if you want to uninstall PMM server. If undefined, it is set to false by default.
 pmm_server_UNINSTALL_PMM: false
 
-pmm_server_docker_cpuset_cpus: 1
+pmm_server_docker_cpu_period: 1000
+pmm_server_docker_cpu_quota: 1000
 pmm_server_docker_memory: 2048M
 pmm_server_docker_memory_reservation: 1024M
 pmm_server_docker_purge_networks: yes
