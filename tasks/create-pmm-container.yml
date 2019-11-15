@@ -4,9 +4,5 @@
     name: pmm-data
     image: "percona/pmm-server:{{ pmm_server_version }}"
     state: present
-    volumes:
-    - /opt/prometheus/data
-    - /opt/consul-data
-    - /var/lib/mysql
-    - /var/lib/grafana
+    volumes: "{{ __pmm_server_docker_data_volumes }}"
     command: /bin/true

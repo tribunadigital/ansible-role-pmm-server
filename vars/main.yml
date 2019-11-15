@@ -12,3 +12,12 @@ __pmm_server_env_defined:
   SERVER_USER: "{{ pmm_server_username }}"
   SERVER_PASSWORD: "{{ pmm_server_password }}"
 __pmm_server_env: "{{ __pmm_server_env_defined | combine(pmm_server_env_custom) }}"
+
+__pmm_server_docker_data_volumes_v1:
+  - /opt/prometheus/data
+  - /opt/consul-data
+  - /var/lib/mysql
+  - /var/lib/grafana
+__pmm_server_docker_data_volumes_v2:
+  - /srv
+__pmm_server_docker_data_volumes: "{{ __pmm_server_docker_data_volumes_v2 if pmm_server_version is version('2.0.0', '>=') else __pmm_server_docker_data_volumes_v1 }}"
