@@ -18,6 +18,5 @@
     volumes_from:
     - pmm-data
     env: "{{ __pmm_server_env }}"
-    ports:
-    - "80:80"
+    ports: "{{ [] if pmm_server_docker_network_mode == 'host' else [ '80:80' ] }}"
     restart_policy: always
